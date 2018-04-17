@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2018-04-13 11:29:12
+Date: 2018-04-17 16:34:18
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -28,14 +28,12 @@ CREATE TABLE `add_order_car` (
   `price` varchar(255) NOT NULL COMMENT '每件商品的总价',
   `create_time` datetime NOT NULL COMMENT '创建时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of add_order_car
 -- ----------------------------
-INSERT INTO `add_order_car` VALUES ('30', '1', '10086', '农家小炒肉', '1', '15', '2018-04-11 17:12:11');
-INSERT INTO `add_order_car` VALUES ('31', '1', '10086', '农家小炒肉', '1', '15', '2018-04-12 16:20:41');
-INSERT INTO `add_order_car` VALUES ('32', '3', '10086', '米饭', '4', '1', '2018-04-12 16:24:03');
+INSERT INTO `add_order_car` VALUES ('52', '2', '10086', '西红柿蛋汤', '1', '10', '2018-04-16 09:48:56');
 
 -- ----------------------------
 -- Table structure for `admin`
@@ -109,6 +107,21 @@ INSERT INTO `dish_table` VALUES ('5', '美味', '西红柿炒鸡蛋', '2', null,
 INSERT INTO `dish_table` VALUES ('6', '辣', '青椒肉丝', '9', '', '18', '炒菜', '2018-03-23 09:58:20');
 
 -- ----------------------------
+-- Table structure for `login_record`
+-- ----------------------------
+DROP TABLE IF EXISTS `login_record`;
+CREATE TABLE `login_record` (
+  `id` int(100) NOT NULL AUTO_INCREMENT COMMENT '用户id',
+  `uid` int(100) NOT NULL COMMENT '用户id',
+  `login_time` datetime NOT NULL COMMENT '登录时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of login_record
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for `my_car`
 -- ----------------------------
 DROP TABLE IF EXISTS `my_car`;
@@ -144,7 +157,7 @@ CREATE TABLE `order_detail` (
   `price` varchar(255) DEFAULT NULL COMMENT '单价',
   `create_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=73 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of order_detail
@@ -208,6 +221,12 @@ INSERT INTO `order_detail` VALUES ('63', '10086', '1008620180411170611', '米饭
 INSERT INTO `order_detail` VALUES ('64', '10086', '1008620180411170611', '米饭', '4', '1元', '2018-04-11 17:06:11');
 INSERT INTO `order_detail` VALUES ('65', '10086', '1008620180411170611', '米饭', '4', '1元', '2018-04-11 17:06:11');
 INSERT INTO `order_detail` VALUES ('66', '10086', '1008620180411170611', '西红柿炒鸡蛋', '2', '15元', '2018-04-11 17:06:11');
+INSERT INTO `order_detail` VALUES ('67', '10086', '1008620180416094715', '夫妻肺片', '1', '25元', '2018-04-16 09:47:15');
+INSERT INTO `order_detail` VALUES ('68', '10086', '1008620180416094715', '夫妻肺片', '1', '25元', '2018-04-16 09:47:15');
+INSERT INTO `order_detail` VALUES ('69', '10086', '1008620180416094715', '夫妻肺片', '1', '25元', '2018-04-16 09:47:15');
+INSERT INTO `order_detail` VALUES ('70', '10086', '1008620180416094715', '西红柿蛋汤', '1', '10元', '2018-04-16 09:47:15');
+INSERT INTO `order_detail` VALUES ('71', '10086', '1008620180416094715', '夫妻肺片', '1', '25元', '2018-04-16 09:47:15');
+INSERT INTO `order_detail` VALUES ('72', '10086', '1008620180416094715', '夫妻肺片', '1', '25元', '2018-04-16 09:47:15');
 
 -- ----------------------------
 -- Table structure for `order_evaluate`
@@ -248,7 +267,7 @@ CREATE TABLE `order_table` (
   `is_buy` int(50) DEFAULT NULL COMMENT '是否付款:1:已支付:2未支付',
   `address_id` int(50) DEFAULT NULL COMMENT '地址的id',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of order_table
@@ -261,6 +280,7 @@ INSERT INTO `order_table` VALUES ('67', '10086', '1008620180411114003', 'yzt', '
 INSERT INTO `order_table` VALUES ('68', '10086', '1008620180411114336', 'yzt', '2', '2018-04-11 11:43:36', '￥25', '2', '1');
 INSERT INTO `order_table` VALUES ('69', '10086', '1008620180411114356', 'yzt', '2', '2018-04-11 11:43:56', '￥10', '2', '1');
 INSERT INTO `order_table` VALUES ('70', '10086', '1008620180411170611', 'yzt', '2', '2018-04-11 17:06:11', '￥286', '1', '1');
+INSERT INTO `order_table` VALUES ('71', '10086', '1008620180416094715', 'yzt', '2', '2018-04-16 09:47:15', '￥135', '1', '1');
 
 -- ----------------------------
 -- Table structure for `order_users`
